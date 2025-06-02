@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">DrunkMode</string>
+    <string name="app_name">Drunk Mode</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="main_screen_question">Did you consume alcohol?</string>
+
+    <string name="lang_pl" translatable="false">Polski</string>
+    <string name="lang_en" translatable="false">English</string>
+    <string name="lang_fr" translatable="false">Français</string>
+    <string name="lang_it" translatable="false">Italiano</string>
+    <string name="lang_es" translatable="false">Español</string>
+
+    <string name="display_mode_light">Light</string>
+    <string name="display_mode_dark">Dark</string>
+    <string name="display_mode_system">System</string>
 </resources>
