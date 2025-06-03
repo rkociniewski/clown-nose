@@ -7,5 +7,7 @@ object Numbers {
     const val SIX = 5
     const val TEN = 10
     const val FIFTEEN = 15
+    const val TWENTY = 20
     const val THIRTY = 30
+    const val SIXTY = 60
 }

@@ -45,4 +45,18 @@ class DrunkModeViewModel @Inject constructor(
     fun askForChallenge() {
         _uiState.value = DrunkModeState.AskChallenge
     }
+
+    fun updateSettings(settings: Settings) {
+        viewModelScope.launch {
+            val writeSuccess = settingsRepository.updateSettings(settings)
+
+            if (writeSuccess) {
+                _settings.value = settings
+
+                logger.debug("Settings updated: $settings")
+            } else {
+                logger.error("Failed to persist settings")
+            }
+        }
+    }
 }

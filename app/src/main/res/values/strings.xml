@@ -2,6 +2,8 @@
     <string name="app_name">Drunk Mode</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="close">Close</string>
+    <string name="selected_item">Selected item</string>
 
     <string name="main_screen_question">Did you consume alcohol?</string>
 
@@ -14,4 +16,24 @@
     <string name="display_mode_light">Light</string>
     <string name="display_mode_dark">Dark</string>
     <string name="display_mode_system">System</string>
+
+    <string name="settings">Settings</string>
+    <string name="settings_label_language">Language</string>
+    <string name="settings_label_navigation_change">Navigation mode</string>
+    <string name="settings_timed_challenged">Timed challenges?</string>
+    <string name="settings_label_prayer_type">Prayer type</string>
+    <string name="settings_label_display_mode">Display mode</string>
+    <string name="settings_label_prayer_location">Prayer location</string>
+    <string name="settings_label_challenge_time">Time for a challenge (s)</string>
+    <string name="settings_label_next_challenge_time">Free use time (min)</string>
+    <string name="settings_label_blocked_time">Apps blocking time (min)</string>
+
+    <string name="tooltip_icon_description">Show setting description</string>
+    <string name="tooltip_prayer_location">Defines if prayer is displayed on top or bottom.</string>
+    <string name="tooltip_display_mode">Defines how the app is displayed: light, dark, or system</string>
+    <string name="tooltip_language">Select application language</string>
+    <string name="tooltip_label_navigation_change">Set mode for bead navigation</string>
+    <string name="tooltip_challenge_time">Time per challenge expressed in seconds.</string>
+    <string name="tooltip_next_challenge_time">Time of free use of the phone after solving the task expressed in minutes</string>
+    <string name="tooltip_blocked_time">App blocking time after incorrectly solving a task, expressed in minutes</string>
 </resources>

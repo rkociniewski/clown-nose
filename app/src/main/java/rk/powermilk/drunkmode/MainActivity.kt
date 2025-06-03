@@ -6,15 +6,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Text
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import rk.powermilk.drunkmode.ui.drunkMode.DrunkModeScreen
 import rk.powermilk.drunkmode.ui.helper.isDarkTheme
-import rk.powermilk.drunkmode.ui.main.MainScreen
+import rk.powermilk.drunkmode.ui.helper.rememberLocalizedContext
 import rk.powermilk.drunkmode.ui.theme.DrunkModeTheme
 import rk.powermilk.drunkmode.viewmodel.DrunkModeViewModel
 
@@ -48,17 +51,22 @@ class MainActivity : ComponentActivity() {
 
             val darkTheme = settings.displayMode.isDarkTheme()
 
-            DrunkModeTheme(darkTheme) {
-                var screen by remember { mutableStateOf("question") }
+            val localizedContext = rememberLocalizedContext(settings.language.name.lowercase())
+            CompositionLocalProvider(LocalContext provides localizedContext) {
+                DrunkModeTheme(darkTheme) {
+                    var screen by remember { mutableStateOf("question") }
 
-                when (screen) {
-                    "question" -> MainScreen(
-                        onConfirmedDrunk = { screen = "blocked" },
-                        onAskChallenge = { screen = "challenge" }
-                    )
+                    when (screen) {
+                        "question" -> DrunkModeScreen(
+                            onConfirmedDrunk = { screen = "blocked" },
+                            onAskChallenge = { screen = "challenge" },
+                            viewModel = viewModel,
+                            localizedContext = localizedContext
+                        )
 
-                    "blocked" -> Text("Apps are blocked now.") // To podmienisz na właściwy ekran
-                    "challenge" -> Text("Solve a math challenge...") // Tu pojawi się kolejne UI
+                        "blocked" -> Text("Apps are blocked now.") // To podmienisz na właściwy ekran
+                        "challenge" -> Text("Solve a math challenge...") // Tu pojawi się kolejne UI
+                    }
                 }
             }
         }
