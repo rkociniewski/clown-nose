@@ -1,7 +1,7 @@
 [versions]
 activityCompose = "1.10.1"
 agp = "8.10.1"
-composeBom = "2025.05.01"
+composeBom = "2025.06.00"
 coreKtx = "1.16.0"
 coroutines = "1.10.2"
 datastore = "1.1.7"
@@ -14,12 +14,13 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 kotlin = "2.1.21"
 ksp = "2.1.21-2.0.1"
-lifecycle = "2.9.0"
-lifecycleRuntimeKtx = "2.9.0"
+lifecycle = "2.9.1"
+lifecycleRuntimeKtx = "2.9.1"
 manes = "0.52.0"
 mockk = "1.14.2"
 serialization = "1.8.1"
-test-logger = "4.0.0"
+testLogger = "4.0.0"
+cameraView = "1.4.2"
 
 [libraries]
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
@@ -48,6 +49,8 @@ mockk-agent = { module = "io.mockk:mockk-agent", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+androidx-camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "cameraView" }
+material-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -57,6 +60,6 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 manes = { id = "com.github.ben-manes.versions", version.ref = "manes" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
-test-logger = { id = "com.adarshr.test-logger", version.ref = "test-logger" }
+test-logger = { id = "com.adarshr.test-logger", version.ref = "testLogger" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

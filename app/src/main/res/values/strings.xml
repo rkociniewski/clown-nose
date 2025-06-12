@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Drunk Mode</string>
+    <string name="app_name">Clown Nose</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="close">Close</string>
@@ -36,4 +36,6 @@
     <string name="tooltip_challenge_time">Time per challenge expressed in seconds.</string>
     <string name="tooltip_next_challenge_time">Time of free use of the phone after solving the task expressed in minutes</string>
     <string name="tooltip_blocked_time">App blocking time after incorrectly solving a task, expressed in minutes</string>
+    <string name="take_photo">Take photo</string>
+    <string name="record_video">Record video</string>
 </resources>

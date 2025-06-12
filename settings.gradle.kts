@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DrunkMode"
+rootProject.name = "clown-nose"
 include(":app")

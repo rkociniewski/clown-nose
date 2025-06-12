@@ -18,11 +18,11 @@ plugins {
 }
 
 android {
-    namespace = "rk.powermilk.drunkmode"
+    namespace = "rk.powermilk.clown"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "rk.powermilk.drunkmode"
+        applicationId = "rk.powermilk.clown"
         minSdk = 28
         targetSdk = 36
         versionCode = 1
@@ -61,6 +61,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.camera.view)
     detektPlugins(libs.detekt)
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.activity.compose)
@@ -77,6 +78,7 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.hilt.android)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.material.extended)
     implementation(platform(libs.androidx.compose.bom))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
