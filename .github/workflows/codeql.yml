@@ -86,10 +86,12 @@ jobs:
       -
         name: Build project
         run: |
-          ./gradlew compileKotlin \
+          ./gradlew assembleDebug \
             --no-daemon \
             --no-build-cache \
             --stacktrace \
+            -x lint \
+            -x lintVitalRelease \
             -x test \
             -x detekt
 

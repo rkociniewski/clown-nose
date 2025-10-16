@@ -25,8 +25,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
+import androidx.compose.material3.TooltipAnchorPosition
 import androidx.compose.material3.TooltipBox
-import androidx.compose.material3.TooltipDefaults.rememberPlainTooltipPositionProvider
+import androidx.compose.material3.TooltipDefaults
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -94,7 +95,7 @@ fun HelpLabel(label: String, tooltip: String) {
         Text(label, style = MaterialTheme.typography.titleMedium)
         Spacer(Modifier.width(Dimensions.minHeight))
         TooltipBox(
-            rememberPlainTooltipPositionProvider(), {
+            TooltipDefaults.rememberTooltipPositionProvider(TooltipAnchorPosition.Above), {
                 PlainTooltip { Text(tooltip) }
             }, tooltipState
         ) {
@@ -148,7 +149,7 @@ fun LanguageSelector(
             FilterChip(
                 selected == opt, { onSelect(opt) }, {
                     TooltipBox(
-                        rememberPlainTooltipPositionProvider(),
+                        TooltipDefaults.rememberTooltipPositionProvider(TooltipAnchorPosition.Above),
                         { Text(stringResource(opt.label)) },
                         rememberTooltipState()
                     ) {

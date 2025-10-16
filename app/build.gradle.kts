@@ -58,8 +58,8 @@ android {
         applicationId = "rk.powermilk.clown"
         minSdk = 28
         targetSdk = 36
-        versionCode = 6
-        versionName = "1.1.5"
+        versionCode = 10
+        versionName = "1.1.8"
         buildToolsVersion = "36.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

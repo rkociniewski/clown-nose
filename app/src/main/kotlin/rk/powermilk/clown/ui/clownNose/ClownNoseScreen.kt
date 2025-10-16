@@ -1,3 +1,5 @@
+@file:Suppress("UnusedParameter")
+
 package rk.powermilk.clown.ui.clownNose
 
 import android.app.Activity
@@ -10,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalView
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import rk.powermilk.clown.ui.camera.QuestionContent
 import rk.powermilk.clown.viewmodel.ClownNoseViewModel
 
