@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage")
-
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
 import org.jetbrains.dokka.gradle.engine.parameters.VisibilityModifier
@@ -58,8 +56,8 @@ android {
         applicationId = "rk.powermilk.clown"
         minSdk = 28
         targetSdk = 36
-        versionCode = 10
-        versionName = "1.1.8"
+        versionCode = 11
+        versionName = "1.1.9"
         buildToolsVersion = "36.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
