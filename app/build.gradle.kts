@@ -11,7 +11,6 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.detekt)
     alias(libs.plugins.dokka)
-    alias(libs.plugins.test.logger)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.ksp)
     jacoco
@@ -43,7 +42,6 @@ val exclusions = listOf(
     "**/*Module*.*",
     "**/*Dagger*.*",
     "**/*Hilt*.*",
-    // Compose specifics
     "**/*ComposableSingletons*.*",
     "**/*_Impl*.*"
 )
@@ -56,8 +54,8 @@ android {
         applicationId = "rk.powermilk.clown"
         minSdk = 28
         targetSdk = 36
-        versionCode = 11
-        versionName = "1.1.9"
+        versionCode = 12
+        versionName = "1.1.10"
         buildToolsVersion = "36.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -115,10 +113,6 @@ android {
     }
 }
 
-jacoco {
-    toolVersion = "0.8.12"
-}
-
 dependencies {
     implementation(libs.androidx.camera.view)
     detektPlugins(libs.detekt)
@@ -151,6 +145,33 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     debugImplementation(libs.androidx.ui.tooling)
     testImplementation(libs.coroutines.test)
+}
+
+dokka {
+    dokkaSourceSets.main {
+        jdkVersion.set(java.targetCompatibility.toString().toInt()) // Used for linking to JDK documentation
+        skipDeprecated.set(false)
+    }
+
+    pluginsConfiguration.html {
+        dokkaSourceSets {
+            configureEach {
+                documentedVisibilities.set(
+                    setOf(
+                        VisibilityModifier.Public,
+                        VisibilityModifier.Private,
+                        VisibilityModifier.Protected,
+                        VisibilityModifier.Internal,
+                        VisibilityModifier.Package,
+                    )
+                )
+            }
+        }
+    }
+}
+
+hilt {
+    enableAggregatingTask = false
 }
 
 detekt {
@@ -334,39 +355,4 @@ tasks.register("cleanReports") {
     doLast {
         delete("${layout.buildDirectory.get()}/reports")
     }
-}
-
-dokka {
-    dokkaSourceSets.main {
-        jdkVersion.set(java.targetCompatibility.toString().toInt()) // Used for linking to JDK documentation
-        skipDeprecated.set(false)
-    }
-
-    pluginsConfiguration.html {
-        dokkaSourceSets {
-            configureEach {
-                documentedVisibilities.set(
-                    setOf(
-                        VisibilityModifier.Public,
-                        VisibilityModifier.Private,
-                        VisibilityModifier.Protected,
-                        VisibilityModifier.Internal,
-                        VisibilityModifier.Package,
-                    )
-                )
-            }
-        }
-    }
-}
-
-hilt {
-    enableAggregatingTask = false
-}
-
-testlogger {
-    showStackTraces = false
-    showFullStackTraces = false
-    showCauses = false
-    slowThreshold = 10000
-    showSimpleNames = true
 }

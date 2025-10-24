@@ -1,6 +1,6 @@
 # Clown Nose
 
-[![version](https://img.shields.io/badge/version-1.1.9-yellow.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-1.1.10-yellow.svg)](https://semver.org)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 [![Build](https://github.com/rkociniewski/clown-nose/actions/workflows/main.yml/badge.svg)](https://github.com/rkociniewski/fibonacci/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/rkociniewski/clown-nose/branch/main/graph/badge.svg)](https://codecov.io/gh/rkociniewski/fibonacci)
